@@ -4,27 +4,28 @@ const header = document.querySelector('h1');
 console.log('header: ', header);
 
 // EXERCISE:
-// select "change image" button (querySelector)
-// add click event listener
-// execute changeImage() function on click event
-// define changeImage() function
-// in this function:
-//    get image element
-//    get imageInput element
-//    log input value
-//    set image src to imageInput element value
+const selectButtonChangeImage = document.getElementById('btn-changeImage');
+
+  const changeImage = () => {
+  const selectImage = document.querySelector('img');
+  const selectImageInput = document.getElementById('imageInput');
+  console.log(selectImageInput.value);
+  selectImage.src = selectImageInput.value;
+  }
+  document.querySelector("#btn-changeImage").addEventListener("click", changeImage);
 
 // ====================================== //
 
 // BONUS:
-// select "add todo" button (querySelector)
-// add click event listener
-// execute addTodo() function on click event
-// define addTodo() function
-// in this function:
-//    get todoList element
-//    get todoInput element
-//    log todoInput element value
-//    create <li> element
-//    set <li> element innerHtml to todoInput value
-//    add <li> element to todoList
+const getToDoButton = document.querySelector('#btn-addTodo');
+console.log(getToDoButton);
+const addTodo = () => {
+    const getTodoList = document.querySelector('#todoList');
+    const getTodoInput = document.querySelector('#todoInput');
+    console.log(getTodoInput.value);
+    const createListElement = document.createElement('li');
+    createListElement.innerHTML = getTodoInput.value;
+    console.log(createListElement);
+    getTodoList.appendChild(createListElement);
+}
+getToDoButton.addEventListener('click', addTodo);
